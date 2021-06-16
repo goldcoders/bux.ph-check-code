@@ -1,4 +1,4 @@
-# Bux.ph Direct Api
+# Bux.ph Fetch Details Api
 
 > Use With Thriftshop Site as a Serverless Function
 
@@ -26,14 +26,8 @@ cd  bux.ph-generate-code
 
 ```json
 {
-    "amount": 555,
-    "description": "generate code",
-    "email": "test@gmail.com",
-    "contact": "9155609040",
-    "name": "uriah",
-    "channel": "CARD"
-    // Channel types is listed on channels.ts
-}}
+    "req_id": "req_4"
+}
 ```
 
 - [ ] Click Send, Receive the Response
@@ -42,17 +36,24 @@ cd  bux.ph-generate-code
   <summary>Response JSON</summary>
 
 ```json
-{
-"status":"success",
-"id":7604,
-"ref_code":"9921-1680-0036",
-"image_url":"https://bux-api-prd-storage.s3.amazonaws.com/media/barcodes/9921-1680-0036.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYFTIVUQLPJG42SNS%2F20210616%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20210616T162803Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ef371334235ed44f0a52f40423fb703064a32cc7ce6230ee759cfadf1329fb1f",
+{"status":"Pending",
+"id":7488,
+"amount":"1254.00",
+"ref_code":"9921-1670-0061",
+"channel":"7-Eleven",
+"image_url":"https://bux-api-prd-storage.s3.amazonaws.com/media/barcodes/9921-1670-0061.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYFTIVUQLPJG42SNS%2F20210616%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20210616T180633Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e40c353d0831cf1a82f9e148229d10996ff96d7c653c417d9cdfa232b09f8827",
 "seller_name":"GOLDCODERS CORP",
-"expiry":"Jun 17 2021, 02:28 AM",
-"created":"Jun 17 2021, 12:28 AM",
-"payment_url":null,
-"link":"https://bux.ph/test/payment/441a7691c86f4605a51c4a539a48a646/",
-"base_link":"https://bux.ph"
+"expiry":"Jun 18 2021, 11:59 PM",
+"created":"Jun 16 2021, 02:38 AM",
+"param1":"test param1",
+"param2":"test param2",
+"fee":20,
+"instructions":{
+  "Payment":["Go to nearest branch","Present the barcode or reference number","Pay the specified amount","The Cashier will process your payment in real-time"]
+  },
+"terms":"https://www.cliqq.net/terms/",
+"link":"https://bux.ph/test/payment/cbdbaa5c46624d569bbb7a5a4b2858c5/",
+"payment_url":null
 }
 ```
 
@@ -63,15 +64,15 @@ cd  bux.ph-generate-code
 
 ## 1 Click Install For Production
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/goldcoders/bux.ph-genereate-code)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/goldcoders/bux.ph-check-code)
 
 ## Deploy on One Specific Site URL in Production
 
 - Go to [Settings](https://app.netlify.com/sites/tss-test/settings/general)
 
-- Click Change Site Name `bux.ph-generate-code.${yourdomain}.com`
+- Click Change Site Name `bux.ph-check-code.${yourdomain}.com`
 
 ## Production
 
-- make post request with Needed *payload* to `bux.ph-generate-code.${domain}.com/api`
+- make post request with Needed *payload* to `bux.ph-check-code.${domain}.com/api`
 
