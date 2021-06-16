@@ -74,5 +74,5 @@ cd  bux.ph-generate-code
 
 ## Production
 
-- make post request with Needed *payload* to `bux.ph-check-code.${domain}.com/api`
+- make post request with Needed *payload* to `bux.ph-check-code.${yourdomain}.com/api`
 
